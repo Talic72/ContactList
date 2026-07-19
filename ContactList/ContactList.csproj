@@ -72,10 +72,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="Views\ContactsPage.xaml.cs">
 	    <DependentUpon>ContactsPage.xaml</DependentUpon>
 	  </Compile>

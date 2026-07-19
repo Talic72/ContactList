@@ -1,10 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using ContactList.Services;
 
-namespace ContactList.ViewModels
+namespace ContactList.ViewModels;
+
+public partial class ContactsViewModel : ObservableObject
 {
-    internal class ContactsViewModel
+    private readonly ContactService _contactService;
+
+    public ContactsViewModel(ContactService contactService)
     {
+        _contactService = contactService;
+    }
+
+    public System.Collections.ObjectModel.ObservableCollection<ContactList.Models.Contact> Contacts
+        => _contactService.Contacts;
+
+    [ObservableProperty]
+    private ContactList.Models.Contact? selectedContact;
+
+    partial void OnSelectedContactChanged(ContactList.Models.Contact? value)
+    {
+        if (value != null)
+        {
+            OpenContactCommand.Execute(value);
+        }
+    }
+
+    [RelayCommand]
+    private async Task OpenContact(ContactList.Models.Contact contact)
+    {
+ //add nav later
+        await Task.CompletedTask;
+    }
+
+    [RelayCommand]
+    private async Task AddContact()
+    {
+      //add nav later
+        await Task.CompletedTask;
     }
 }
