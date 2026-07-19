@@ -1,9 +1,12 @@
+using ContactList.ViewModels;
+
 namespace ContactList.Views;
 
 public partial class ContactDetailsPage : ContentPage
 {
-    public ContactDetailsPage()
+    public ContactDetailsPage(ContactDetailsViewModel vm)
     {
         InitializeComponent();
+        BindingContext = vm;
     }
 }

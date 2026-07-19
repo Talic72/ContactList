@@ -27,10 +27,12 @@ public partial class ContactsViewModel : ObservableObject
         }
     }
 
+    
     [RelayCommand]
     private async Task OpenContact(ContactList.Models.Contact contact)
     {
-     
+        _contactService.SelectedContact = contact;
+
         await Shell.Current.GoToAsync(nameof(Views.ContactDetailsPage));
 
         SelectedContact = null;

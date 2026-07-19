@@ -6,38 +6,17 @@ namespace ContactList.ViewModels;
 
 public partial class ContactDetailsViewModel : ObservableObject
 {
-    private readonly ContactService _contactService;
-
-    public ContactDetailsViewModel(ContactService contactService)
-    {
-        _contactService = contactService;
-    }
-
     [ObservableProperty]
     private ContactList.Models.Contact? selectedContact;
 
-    [ObservableProperty]
-    private bool isEditing;
-
     [RelayCommand]
-    private void Edit()
+    private async Task Back()
     {
-        IsEditing = true;
+        await Shell.Current.GoToAsync("..");
     }
 
-    [RelayCommand]
-    private async Task SaveAsync()
+public ContactDetailsViewModel(ContactService contactService)
     {
-        IsEditing = false;
-
-        // Nav added later
-        await Task.CompletedTask;
-    }
-
-    [RelayCommand]
-    private async Task BackAsync()
-    {
-        // Nav later
-        await Task.CompletedTask;
+        SelectedContact = contactService.SelectedContact;
     }
 }

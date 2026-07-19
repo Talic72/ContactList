@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ContactList.Views.ContactDetailsPage"
-             Title="Contact Details">
-    <VerticalStackLayout Padding="20">
-        
-        <Label 
-            Text="Contact Details"
+<ContentPage
+    x:Class="ContactList.Views.ContactDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Contact Details">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label
+            Text="{Binding SelectedContact.Name}"
             FontSize="24"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"/>
+            FontAttributes="Bold"/>
+
+        <Label Text="{Binding SelectedContact.Email}" />
+
+        <Label Text="{Binding SelectedContact.PhoneNumber}" />
+
+        <Label Text="{Binding SelectedContact.Description}" />
+
+        <Button
+            Text="Back"
+            Command="{Binding BackCommand}" />
+
     </VerticalStackLayout>
+
 </ContentPage>

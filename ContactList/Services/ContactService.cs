@@ -6,4 +6,5 @@ namespace ContactList.Services;
 public class ContactService
 {
     public ObservableCollection<ContactList.Models.Contact> Contacts { get; } = new();
+    public ContactList.Models.Contact? SelectedContact { get; set; }
 }
