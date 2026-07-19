@@ -1,8 +1,8 @@
 namespace ContactList.Views;
 
-public partial class NewPage1 : ContentPage
+public partial class ContactsPage : ContentPage
 {
-	public NewPage1()
+	public ContactsPage()
 	{
 		InitializeComponent();
 	}
