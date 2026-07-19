@@ -9,4 +9,9 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext = viewModel;
     }
+
+    private async void ViewContacts_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(ContactsPage));
+    }
 }

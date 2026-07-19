@@ -27,7 +27,7 @@ public partial class AddContactViewModel : ObservableObject
     private string description = string.Empty;
 
     [RelayCommand]
-    private async Task SaveAsync()
+    private async Task Save()
     {
         ContactList.Models.Contact newContact = new()
         {

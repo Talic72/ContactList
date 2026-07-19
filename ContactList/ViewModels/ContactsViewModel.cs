@@ -30,14 +30,15 @@ public partial class ContactsViewModel : ObservableObject
     [RelayCommand]
     private async Task OpenContact(ContactList.Models.Contact contact)
     {
- //add nav later
-        await Task.CompletedTask;
+     
+        await Shell.Current.GoToAsync(nameof(Views.ContactDetailsPage));
+
+        SelectedContact = null;
     }
 
     [RelayCommand]
     private async Task AddContact()
     {
-      //add nav later
-        await Task.CompletedTask;
+        await Shell.Current.GoToAsync("..");
     }
 }

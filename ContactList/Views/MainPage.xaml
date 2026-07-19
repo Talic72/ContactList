@@ -37,8 +37,11 @@
                 Text="{Binding Description}" />
 
             <Button
-                Command="{Binding SaveAsyncCommand}"
+                Command="{Binding SaveCommand}"
                 Text="Save Contact" />
+            <Button
+                 Text="View Contacts"
+                 Clicked="ViewContacts_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>
